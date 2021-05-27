@@ -1,11 +1,10 @@
 public class Test {
     public static void main(String[] args) {
-        System.out.println(execute((a,b) -> {
-            return 60 ;
-        }));
+        int result = execute((a, b, c) -> 60);
+        System.out.println(result);
     }
 
     public static int execute(FunctionalInterface functionalInterface) {
-        return functionalInterface.test(5, 6);
+        return functionalInterface.test(5, 6, 7);
     }
 }

@@ -1,3 +1,3 @@
 public interface FunctionalInterface {
-    int test(int a, int b);
+    int test(int a, int b, int c);
 }
