@@ -1,3 +1,5 @@
+package Lambda;
+
 import java.io.*;
 
 public class Test {
