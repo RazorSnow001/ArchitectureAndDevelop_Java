@@ -14,13 +14,8 @@ public class Test {
         list.add(new Apple("green", "130"));
         list.add(new Apple("green", "120"));
         list.add(new Apple("green", "190"));
-        Comparator<Apple> byWeight = new Comparator<Apple>() {
-            public int compare(Apple a1, Apple a2) {
-                return a1.getWeight().compareTo(a2.getWeight());
-            }
-        };
-
-        Collections.sort(list,new HowToUseComparator());
+        Comparator<Apple> byWeight = (Apple o1, Apple o2) -> Integer.parseInt(o2.getWeight()) - Integer.parseInt(o1.getWeight());
+        Collections.sort(list,byWeight);
         System.out.println(list);
     }
 }
