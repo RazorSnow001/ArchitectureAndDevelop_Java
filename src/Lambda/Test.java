@@ -1,6 +1,7 @@
 package Lambda;
 
 import java.io.*;
+import java.util.function.ToIntFunction;
 
 public class Test {
     public static void main(String[] args) throws IOException {
@@ -10,6 +11,10 @@ public class Test {
                 br.readLine() + " " + br.readLine()
         );
         System.out.println(txt);
+        ToIntFunction<String> stringToInt =
+                (String s) -> Integer.parseInt(s);
+        ToIntFunction<String> stringToInt1 =
+                Integer::parseInt;
     }
 
     public static String processFile(BufferedReaderProcessor p) throws IOException {
