@@ -1,8 +1,11 @@
 package Lambda;
 
+import Lambda.Comparator.Apple;
+
 import java.io.*;
 import java.util.List;
 import java.util.function.BiPredicate;
+import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
 
 public class Test {
@@ -18,7 +21,9 @@ public class Test {
         ToIntFunction<String> stringToInt1 =
                 Integer::parseInt;
         BiPredicate<List<String>, String> contains =
-                (list, element) -> list.contains(element);
+                List::contains;
+        Supplier<Apple> c1 = () -> new Apple();
+        Apple a1 = c1.get();
     }
 
     public static String processFile(BufferedReaderProcessor p) throws IOException {
