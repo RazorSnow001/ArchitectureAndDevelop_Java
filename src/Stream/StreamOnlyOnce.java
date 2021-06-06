@@ -1,6 +1,7 @@
 package Stream;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -12,6 +13,7 @@ public class StreamOnlyOnce {
         Stream<String> s = title.stream();
         List<Integer> result = s.map(String::length).
                 filter(length -> length > 2)
+                .sorted(Comparator.reverseOrder())
                 .collect(toList());
         System.out.println(result);
         /* s.forEach(System.out::println);*/
