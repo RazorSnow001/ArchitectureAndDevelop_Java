@@ -10,7 +10,9 @@ public class StreamOnlyOnce {
     public static void main(String[] args) {
         List<String> title = Arrays.asList("Modern", "Java", "In", "Action");
         Stream<String> s = title.stream();
-        List<String> result = s.filter((d) -> d.length() > 2).collect(toList());
+        List<Integer> result = s.filter((d) -> d.length() > 2).
+                map(String::length)
+                .collect(toList());
         System.out.println(result);
         /* s.forEach(System.out::println);*/
         /*s.forEach(System.out::println);*/
