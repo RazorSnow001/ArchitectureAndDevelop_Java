@@ -23,6 +23,5 @@ public class MultipleAttributesSort {
             return (compareColor == 0) ? compareWeight : compareColor;
         });
         System.out.println();
-
     }
 }
