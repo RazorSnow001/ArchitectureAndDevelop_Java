@@ -13,6 +13,10 @@ public class Apple {
 
     }
 
+    public Apple(Integer weight) {
+        this.weight = String.valueOf(weight);
+    }
+
     public String getColor() {
         return color;
     }
