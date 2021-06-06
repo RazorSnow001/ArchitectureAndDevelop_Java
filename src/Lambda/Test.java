@@ -1,6 +1,8 @@
 package Lambda;
 
 import java.io.*;
+import java.util.List;
+import java.util.function.BiPredicate;
 import java.util.function.ToIntFunction;
 
 public class Test {
@@ -15,6 +17,8 @@ public class Test {
                 (String s) -> Integer.parseInt(s);
         ToIntFunction<String> stringToInt1 =
                 Integer::parseInt;
+        BiPredicate<List<String>, String> contains =
+                (list, element) -> list.contains(element);
     }
 
     public static String processFile(BufferedReaderProcessor p) throws IOException {
