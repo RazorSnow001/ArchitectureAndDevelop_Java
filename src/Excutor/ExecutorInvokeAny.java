@@ -6,7 +6,7 @@ import java.util.concurrent.*;
 
 public class ExecutorInvokeAny {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        ExecutorService executorService = Executors.newFixedThreadPool(1);
         Set<Callable<String>> callables = new HashSet<>();
         callables.add(() -> "task 1");
         callables.add(() -> "task 2");
