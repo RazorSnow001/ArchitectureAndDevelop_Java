@@ -15,5 +15,9 @@ public class GetPair {
                                 .map(j -> new int[]{i, j})
                         )
                         .collect(toList());
+        numbers1.stream()
+                .flatMap(i -> numbers2.stream()
+                        .map(j -> new int[]{i, j})
+                ).forEach(a -> System.out.println("["+a[0]+","+a[1]+"]"));
     }
 }
