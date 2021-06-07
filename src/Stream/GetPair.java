@@ -17,6 +17,11 @@ public class GetPair {
                         .collect(toList());
         numbers1.stream()
                 .flatMap(i -> numbers2.stream()
+                        .filter(j->(i+j)%3==0)
+                        .map(j -> new int[]{i, j})
+                ).forEach(a -> System.out.println("["+a[0]+","+a[1]+"]"));
+        numbers1.stream()
+                .flatMap(i -> numbers2.stream()
                         .map(j -> new int[]{i, j})
                 ).forEach(a -> System.out.println("["+a[0]+","+a[1]+"]"));
     }
