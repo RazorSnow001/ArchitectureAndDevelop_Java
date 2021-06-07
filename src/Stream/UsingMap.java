@@ -23,6 +23,5 @@ public class UsingMap {
                 wordLengths) {
             System.out.println(integer);
         }
-
     }
 }
