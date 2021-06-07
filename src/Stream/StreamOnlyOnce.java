@@ -16,6 +16,7 @@ public class StreamOnlyOnce {
                 .sorted(Comparator.reverseOrder())
                 .collect(toList());
         System.out.println(result);
+
         /* s.forEach(System.out::println);*/
         /*s.forEach(System.out::println);*/
     }
