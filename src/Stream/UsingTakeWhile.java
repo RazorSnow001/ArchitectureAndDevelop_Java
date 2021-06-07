@@ -16,5 +16,11 @@ public class UsingTakeWhile {
          specialMenu.stream()
                 .filter(dish -> dish.getCalories() < 320)
                 .forEach((dish)-> System.out.println(dish.getDishName()));
+        specialMenu.stream()
+                .takeWhile(dish -> dish.getCalories() < 320)
+                .forEach((dish)-> System.out.println(dish.getDishName()));
+        specialMenu.stream()
+                .dropWhile(dish -> dish.getCalories() < 320)
+                .forEach((dish)-> System.out.println(dish.getDishName()));
     }
 }
