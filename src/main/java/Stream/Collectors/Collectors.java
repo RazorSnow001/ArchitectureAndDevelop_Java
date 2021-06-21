@@ -20,6 +20,10 @@ public class Collectors {
         int totalCalories = specialMenu.stream().map(Dish::getCalories).reduce(0, (i, j) -> i + j);
         Optional<Dish> mostCalorieDish =
                 specialMenu.stream().reduce((d1, d2) -> d1.getCalories() > d2.getCalories() ? d1 : d2);
+     /*   Map<Dish.Type, List<Dish>> caloricDishesByType =
+                menu.stream()
+                        .collect(groupingBy(Dish::getType,
+                                filtering(dish -> dish.getCalories() > 500, toList())));*/
         System.out.println(totalCalories);
         System.out.println(mostCalorieDish);
     }
