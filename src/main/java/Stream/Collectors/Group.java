@@ -26,6 +26,13 @@ public class Group {
                     else return 3;
                 }, filtering(dish -> dish.getCalories() > 350, toList())
         ));
+        Map<Integer, List<String>> dishesByCaloriesName = menu.stream().collect(groupingBy(
+                (dish) -> {
+                    if (dish.getCalories() < 300) return 1;
+                    else if (dish.getCalories() <= 700) return 2;
+                    else return 3;
+                }, mapping(Dish::getDishName, toList())
+        ));
 
         System.out.println(dishesByCalories);
     }
