@@ -17,6 +17,4 @@ public class CountWithCollect {
         System.out.println(result.isPresent());
 
     }
-
-
 }
