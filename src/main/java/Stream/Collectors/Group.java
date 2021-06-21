@@ -23,8 +23,9 @@ public class Group {
                     if (dish.getCalories() < 300) return 1;
                     else if (dish.getCalories() <= 700) return 2;
                     else return 3;
-                }
+                }, filtering(dish -> dish.getCalories() > 350, toList())
         ));
+
         System.out.println(dishesByCalories);
     }
 }
