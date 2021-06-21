@@ -18,6 +18,7 @@ public class Group {
                 new Dish("chicken", false, 400),
                 new Dish("fat meat", false, 1800),
                 new Dish("french fries", true, 530));
+
         Map<Integer, List<Dish>> dishesByCalories = menu.stream().collect(groupingBy(
                 (dish) -> {
                     if (dish.getCalories() < 300) return 1;
