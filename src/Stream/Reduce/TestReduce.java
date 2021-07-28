@@ -22,7 +22,7 @@ is reduced to a value)   */
     @Test
     public void testSum() {
         List<Integer> numbers = Arrays.asList(1, 5, 3, 6, 7, 2, 7, 3);
-        int sum = numbers.stream().reduce(0, (a, b) -> a + b);
+        int sum = numbers.stream().reduce(0, Integer::sum);
         Optional<Integer> max = numbers.stream().reduce(Integer::max);
         System.out.println(max.get());
     }
