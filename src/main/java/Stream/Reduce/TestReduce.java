@@ -1,4 +1,4 @@
-package Stream.Reduce;
+package main.java.Stream.Reduce;
 
 import org.junit.Test;
 
@@ -23,7 +23,9 @@ is reduced to a value)   */
     public void testSum() {
         List<Integer> numbers = Arrays.asList(1, 5, 3, 6, 7, 2, 7, 3);
         int sum = numbers.stream().reduce(0, Integer::sum);
+
         Optional<Integer> max = numbers.stream().reduce(Integer::max);
         System.out.println(max.get());
+
     }
 }
