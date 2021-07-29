@@ -19,13 +19,11 @@ public class TestReduce {
 queries combine all the elements in the stream repeatedly to produce a single value
 such as an Integer     ----  as reduction operations (a stream
 is reduced to a value)   */
-   /* @Test
-    public void testSum() {
+    public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList(1, 5, 3, 6, 7, 2, 7, 3);
         int sum = numbers.stream().reduce(0, Integer::sum);
 
         Optional<Integer> max = numbers.stream().reduce(Integer::max);
         System.out.println(max.get());
-
-    }*/
+    }
 }
