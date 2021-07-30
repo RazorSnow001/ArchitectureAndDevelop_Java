@@ -25,5 +25,6 @@ is reduced to a value)   */
 
         Optional<Integer> max = numbers.stream().reduce(Integer::max);
         System.out.println(max.get());
+
     }
 }
