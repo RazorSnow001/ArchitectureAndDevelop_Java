@@ -79,7 +79,7 @@ public class TestGroup {
         Operator o1 = new Operator(7, 131, 212);
         Operator o2 = new Operator(8, 141, 212);
         Operator o3 = new Operator(9, 151, 234);
-        Operator o4 = new Operator(10, 161, 234);
+        Operator o4 = new Operator(11, 161, 234);
 
         List<Operator> operatorList = new ArrayList<>();
         operatorList.add(o1);
@@ -88,7 +88,7 @@ public class TestGroup {
         operatorList.add(o4);
 
         /*Map<Pair, List<Operator>> map = operatorList.stream().collect(Collectors.groupingBy(o -> org.apache.commons.lang3.tuple.Pair.of(o.contactNumber, o.number)));*/
-        Map<Pair, Operator> map2 = operatorList.stream().collect(Collectors.toMap(o -> Pair.of(o.contactNumber, o.number), Function.identity()));
+        Map<Object, Operator> map2 = operatorList.stream().collect(Collectors.toMap(o -> Pair.of(o.contactNumber, o.number), Function.identity()));
         summaryList.forEach(s -> s.detailList.forEach(d -> {
             Operator operator = map2.get(Pair.of(s.contactNumber, d.number));
             System.out.println(operator.toString());
