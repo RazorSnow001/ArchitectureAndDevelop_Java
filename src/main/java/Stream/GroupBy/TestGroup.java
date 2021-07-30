@@ -94,7 +94,6 @@ public class TestGroup {
             System.out.println(operator.toString());
         }));
         System.out.println(map2);
-
     }
 
 }
