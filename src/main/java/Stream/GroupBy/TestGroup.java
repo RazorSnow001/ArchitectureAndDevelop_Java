@@ -89,7 +89,7 @@ public class TestGroup {
 
         /*Map<Pair, List<Operator>> map = operatorList.stream().collect(Collectors.groupingBy(o -> org.apache.commons.lang3.tuple.Pair.of(o.contactNumber, o.number)));*/
         Map<Pair, Operator> map2 = operatorList.stream().collect(Collectors.toMap(o -> Pair.of(o.contactNumber, o.number), Function.identity()));
-        summaryList.stream().forEach(s -> s.detailList.forEach(d -> {
+        summaryList.forEach(s -> s.detailList.forEach(d -> {
             Operator operator = map2.get(Pair.of(s.contactNumber, d.number));
             System.out.println(operator.toString());
         }));
