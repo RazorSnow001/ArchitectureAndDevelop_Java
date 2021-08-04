@@ -1,0 +1,34 @@
+CompletableFuture
+
+A CompltableFuture is used for asynchronous programming
+
+Asynchronous programming means writing non-blocking code
+
+It runs a task on a separate thread than the main application thread
+
+notifies the main thread about its progress, completion or failure.
+
+In this way, the main thread does not block or wait for the completion of the task. Other tasks execute in parallel. Parallelism improves the performance of the program.
+
+It performs an action and returns a value when another completion stage completes.
+
+A model for a task that may trigger other tasks.
+
+A CompletableFuture is an extension to Java's Future API which was introduced in Java 8.
+
+Future has so many limitations, that's why we have CompletableFuture.
+CompletableFuture provides a broad set of methods for creating multiple Futures, chaining, and combining.
+ It also has comprehensive exception handling support
+
+ Creating a CompletableFuture
+
+ CompletableFuture<String> CompletableFuture = new CompletableFuture<String>();
+
+ Initially, Java had locks (via synchronized classes and methods), Runnables and
+Threads. In 2004, Java 5 introduced the java.util.concurrent package, which supported more expressive concurrency, particularly the ExecutorService1
+ interface
+(which decoupled task submission from thread execution), as well as Callable<T>
+and Future<T>, which produced higher-level and result-returning variants of Runnable
+and Thread and used generics (also introduced in Java 5). ExecutorServices can execute both Runnables and Callables. These features facilitated parallel programming
+on the multicore CPUs that started to appear the following year. To be honest, nobody
+enjoyed working with threads directly
