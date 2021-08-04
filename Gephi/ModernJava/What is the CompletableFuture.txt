@@ -59,3 +59,7 @@ But if you know that f and g don’t
 interact, or you don’t care, you want to execute f and g in separate CPU cores, which
 makes the total execution time only the maximum of that of the calls to f and g instead
 of the sum.
+
+All you need to do is run the calls to f and g in separate threads. This idea
+is a great one, but it complicates5
+ the simple code from before
