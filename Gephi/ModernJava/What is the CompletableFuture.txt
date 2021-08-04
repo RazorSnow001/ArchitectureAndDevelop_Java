@@ -62,4 +62,39 @@ of the sum.
 
 All you need to do is run the calls to f and g in separate threads. This idea
 is a great one, but it complicates5
- the simple code from before
+the simple code from before
+
+
+public class TestAsyn {
+    public static int f(int x) {
+        return x * x;
+    }
+
+    public static int g(int y) {
+        return 3 * y;
+    }
+
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+        int x = 1000;
+        int y = 100;
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        Future<Integer> k = executorService.submit(() -> f(x));
+        Future<Integer> z = executorService.submit(() -> g(y));
+        System.out.println(k.get() + z.get());
+        executorService.shutdown();
+    }
+}
+
+The answer involves changing the API to an asynchronous API.
+6
+ Instead of allowing
+a method to return its result at the same time that it physically returns to the caller
+(synchronously), you allow it to return physically before producing its result
+
+Thus, the call to f and the code following this call (here, the call to g)
+can execute in parallel
+
+You can achieve this parallelism by using two techniques, both
+of which change the signatures of f and g
+
+here
