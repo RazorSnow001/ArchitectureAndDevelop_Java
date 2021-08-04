@@ -32,3 +32,30 @@ and Future<T>, which produced higher-level and result-returning variants of Runn
 and Thread and used generics (also introduced in Java 5). ExecutorServices can execute both Runnables and Callables. These features facilitated parallel programming
 on the multicore CPUs that started to appear the following year. To be honest, nobody
 enjoyed working with threads directly
+
+int f(int x);
+int g(int x);
+
+
+For emphasis, we’ll refer to these signatures as a synchronous API, as they return their
+results when they physically return, in a sense that will soon become clear.
+
+
+invoke this API with a code fragment that calls them both and prints the sum of
+their results:
+int y = f(x);
+int z = g(x);
+System.out.println(y + z);
+
+Now suppose that methods f and g execute for a long time. (These methods could
+implement a mathematical optimization task, such as gradient descent, but in chapters 16 and 17, we consider more-practical cases in which they make Internet queries.)
+
+that is very interesting !
+
+In general, the Java compiler can do nothing to optimize this code because f and g
+may interact in ways that aren’t clear to the compiler
+
+But if you know that f and g don’t
+interact, or you don’t care, you want to execute f and g in separate CPU cores, which
+makes the total execution time only the maximum of that of the calls to f and g instead
+of the sum.
