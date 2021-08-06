@@ -98,3 +98,11 @@ You can achieve this parallelism by using two techniques, both
 of which change the signatures of f and g
 
 here
+
+
+so again the example of manage dependency
+so what kind of the dependency ? we want to deal with ?
+synchronization  and asynchronization
+for a stream of the task .here are
+synchronization . between these tasks
+.3
