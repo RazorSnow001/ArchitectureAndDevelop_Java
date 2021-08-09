@@ -26,6 +26,17 @@ public class TestObservablePushEvents {
     ! will learn about the key ones in this book. Learning which operators to use for a situation and how
     ! to combine them is the key to mastering RxJava.
 */
+
+    /* *
+    *  The first answer is when you first start out: yes! You always want to take a reactive approach. The only
+ !  way to truly become a master of reactive programming is to build reactive applications from the ground
+ !  up.
+    *
+    * Think of everything as Observable and always model your program in terms of data and event flows.
+ *  When you do this, you will leverage everything reactive programming has to offer and see the quality of
+ *  your applications go up significantly
+    *
+    * */
 }
 
 
