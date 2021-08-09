@@ -1,0 +1,27 @@
+
+
+ ! Thinking Reactively, the Observable is a push-based, composable iterator. For a
+ !  given Observable<T>, it pushes items (called emissions) of type T through a series of operators until it finally
+ !  arrives at a final Observer
+
+ * which consumes the items. We will cover several ways to create an Observable,
+   but first, let's dive into how an Observable works through its onNext(), onCompleted(), and onError() calls
+ *
+ ? Before we do anything else, we need to study how an Observable sequentially passes items down a chain to
+   an Observer. At the highest level, an Observable works by passing three types of events:
+
+   onNext(): This passes each item one at a time from the source Observable all the way down to the
+   Observer
+
+   onComplete():  This communicates a completion event all the way down to the Observer, indicating that no
+   more onNext() calls will occur.
+
+   onError(): This communicates an error up the chain to the Observer, where the Observer typically defines
+   how to handle it. Unless a retry() operator is used to intercept the error, the Observable chain typically
+   terminates, and no more emissions will occur.
+
+   These three events are abstract methods in the Observer type, and we will cover some of the implementation
+   later. For now, we will focus pragmatically on how they work in everyday usage
+
+   Let's start with creating a source Observable using Observable.create(). Relatively speaking, a source Observable
+   is an Observable where emissions originate from and is the starting point of our Observable chain.
