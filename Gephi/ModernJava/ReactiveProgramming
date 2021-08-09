@@ -10,7 +10,7 @@ streams of data items coming from different systems and sources in an asynchrono
 The main feature of reactive programming for application-level components allows
 tasks to be executed asynchronously
 
- As we discuss in the rest of this chapter, processing streams of events in an asynchronous and nonblocking way is essential for maximizing the use rate of modern multicore CPUs and, more precisely, of the threads
+As we discuss in the rest of this chapter, processing streams of events in an asynchronous and nonblocking way is essential for maximizing the use rate of modern multicore CPUs and, more precisely, of the threads
 competing for their use
 
 To achieve this goal, the reactive frameworks and libraries
@@ -32,3 +32,34 @@ Reactive at application level
 
 whereas events are facts that will
 be received by the components that are registered to observe them
+
+In the wrong hands, RxJava can make traditional spaghetti code even
+worse. With any power comes responsibility. You’ll learn where to use
+RxJava and where not
+
+ Benefits of Rx
+
+ Rx is more of a way to enable visualizing
+ data flow rather than a mechanical solution
+
+ publish-subscribe pattern
+
+ a pattern of the  publish - subscribe pattern
+
+ An observable (the publisher)
+ sends a value, and a subscriber consumes it. But the trick is, you can
+ modify the values on the way
+
+Handling of asynchronous operations
+Handling of asynchronous operations
+why we need the you know RXJAVA
+
+In ReactiveX, the core type you will work with is the Observable
+
+Observable
+
+But essentially, an Observable pushes things
+
+A given
+Observable<T>pushes things of type T through a series of operators until it arrives at an Observer that consumes
+the items.
