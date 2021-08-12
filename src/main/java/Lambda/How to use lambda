@@ -37,3 +37,64 @@
      Lambda is the fundamental of all these
      functional programming
 
+     Comparator<Apple> byWeight =
+      (Apple a1, Apple a2) -> a1.getWeight().compareTo(a2.getWeight());
+
+      It’s a functional interface! Why? Because
+     Predicate specifies only one abstract method
+
+     Remember the interface Predicate<T> you created in chapter 2 so you could parameterize the behavior of the filter method?
+
+  !   public interface Predicate<T> {
+  !    boolean test (T t);
+  !   }
+
+  ?   public interface Comparator<T> {
+  ?    int compare(T o1, T o2);
+  ?   }
+
+  *   public interface Runnable {
+  *    void run();
+  *   }
+
+  public interface ActionListener extends EventListener {
+   void actionPerformed(ActionEvent e);
+  }
+
+  public interface Callable<V> {
+   V call() throws Exception;
+  }
+
+  public interface PrivilegedAction<T> {
+   T run();
+  }
+
+
+!  Quiz 3.2: Functional interface
+!  Which of these interfaces are functional interfaces?
+! public interface Adder {
+   int add(int a, int b);
+  }
+  public interface SmartAdder extends Adder {
+   int add(double a, double b);
+  }
+  public interface Nothing {
+  }
+  Answer:
+  Only Adder is a functional interface.
+  SmartAdder isn’t a functional interface because it specifies two abstract methods
+  called add (one is inherited from Adder).
+  Nothing isn’t a functional interface because it declares no abstract method at all.
+
+  Runnable r1 = () -> System.out.println("Hello World 1");
+  Runnable r2 = new Runnable() {
+   public void run() {
+   System.out.println("Hello World 2");
+   }
+  };
+  public static void process(Runnable r) {
+   r.run();
+  }
+  process(r1);
+  process(r2);
+  process(() -> System.out.println("Hello World 3"));
