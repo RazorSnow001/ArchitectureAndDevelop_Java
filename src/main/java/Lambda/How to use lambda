@@ -1,0 +1,39 @@
+1  Lambda is the a instance
+2  Lambda is related to the function interface
+   which
+   is the abstraction method of the
+   interface
+3  so the lambda is the instance of the functional interface
+   which overrides the
+   abstraction method of the interface
+   so that is actually the
+   strategy design pattern improvement !
+   and the inner anonymous class it self
+4  we need to put the instance into some method which accept the
+   instance of the functional interface
+   so actually we push  a object
+   but we focus on the real meaning part
+   the method we override
+   so
+   the input of the method
+   the override logic for the method
+   the method name ?
+   doesn't matter bro !
+   the result of the method
+   that matters !
+5  so why the lambda is flexible and powerful
+   1 we can use the existing functional interface
+     like
+   !  Runnable -> run() which is the ()->{return void ! }
+   !  Comparator -> (a,b) - > {return int }
+   2 we can define our own functional interface to do the work
+     so every place we need to use the method of the  interface
+     we can use lambda
+   3 because of the stream and the RxJava all consumes the
+     functional interface instance
+
+     above all these things we can say  the
+
+     Lambda is the fundamental of all these
+     functional programming
+
