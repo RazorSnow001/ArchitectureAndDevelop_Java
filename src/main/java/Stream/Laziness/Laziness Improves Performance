@@ -37,3 +37,10 @@
   The output put clearly shows the map operation was called after calling the collect method only.
   Think of the collection operations created at one place and probably never used in the entire program.
   Java 8 Streams do not process the collection operations until user actually starts using it.
+
+  so if we create a stream
+  only when we use the terminated operation
+  the map
+  stream method will be executed
+  which follows the rule of the laziness operation !
+
