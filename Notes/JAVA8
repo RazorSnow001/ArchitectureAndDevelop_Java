@@ -52,3 +52,8 @@ public interface InterfaceNew1 {
 
 如果有一个类既实现了 InterfaceNew 接口又实现了 InterfaceNew1接口，它们都有def()，并且 InterfaceNew 接口和 InterfaceNew1接口没有继承关系的话，这时就必须重写def()。
 不然的话，编译的时候就会报错。
+
+在 Java 8 ，接口和抽象类有什么区别的？
+
+很多小伙伴认为：“既然 interface 也可以有自己的方法实现，似乎和 abstract class 没多大区别了。
+
