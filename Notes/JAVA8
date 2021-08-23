@@ -1,0 +1,54 @@
+Interface
+
+interface 的设计初衷是面向抽象，提高扩展性。这也留有一点遗憾，Interface 修改的时候，实现它的类也必须跟着改。
+
+想一下啊
+这个好像是个非常棘手的问题
+从依赖关系来看确实能看出有问题的地方
+问题就在于
+接口处于上游
+一旦比如说我的接口增加了method
+非常合理
+实现类必须跟着实现
+这个倒是没有啥问题
+
+这是一种强制的机制
+但是也限制了自由
+我们想要的是 接口里面也有一定的方法可以用
+如果
+不行的话
+
+为了解决接口的修改与现有的实现不兼容的问题。新 interface 的方法可以用default 或 static修饰，这样就可以有方法体，实现类也不必重写此方法
+
+一个 interface 中可以有多个方法被它们修饰，这 2 个修饰符的区别主要也是普通方法和静态方法的区别。
+
+default修饰的方法，是普通实例方法，可以用this调用，可以被子类继承、重写。
+
+static修饰的方法，使用上和一般类静态方法一样。但它不能被子类继承，只能用Interface调用。
+
+public interface InterfaceNew {
+    static void sm() {
+        System.out.println("interface提供的方式实现");
+    }
+    static void sm2() {
+        System.out.println("interface提供的方式实现");
+    }
+
+    default void def() {
+        System.out.println("interface default方法");
+    }
+    default void def2() {
+        System.out.println("interface default2方法");
+    }
+    //须要实现类重写
+    void f();
+}
+
+public interface InterfaceNew1 {
+    default void def() {
+        System.out.println("InterfaceNew1 default方法");
+    }
+}
+
+如果有一个类既实现了 InterfaceNew 接口又实现了 InterfaceNew1接口，它们都有def()，并且 InterfaceNew 接口和 InterfaceNew1接口没有继承关系的话，这时就必须重写def()。
+不然的话，编译的时候就会报错。
