@@ -1,6 +1,6 @@
 package Stream.Collectors;
 
-import Stream.Dish;
+import Stream.Examples.Dish;
 
 import java.util.Arrays;
 import java.util.List;

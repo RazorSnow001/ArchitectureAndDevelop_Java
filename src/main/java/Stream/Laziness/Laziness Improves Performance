@@ -1,0 +1,39 @@
+ If the laziness is utilised in a right manner,
+ the answer is ‘yes‘. Consider you are on an online shopping site and you searched for a particular type of a product.
+ Usually most of the websites will show few of the matching products immediately and a ‘loading more’ message at the bottom. Finally,
+ all of the search results will be loaded in parts, as described.
+ The intent behind doing this is to keep the user interested by immediately showing him some of the results
+
+ While the user is browsing through the loaded products,
+ the rest of the products are being loaded. This is because,
+ the site is delaying the complete loading of the entire product list
+
+ Consider,
+ if the site does eager loading or early loading of all of the products,
+ the response time would increase and the user might get distracted to something else.
+
+ While you are dealing with bigger data, or infinite streams the laziness is a real boon.
+
+ so that is just answer the first question ?
+ why we need to use the laziness of the streams of the data
+ 1 because of
+   quick response
+ 2 dealing with bigger data
+
+  The eager processing will always process the entire amount of data at the cost of performance and client might end up utilising very small chunk of it,
+  or depending upon some condition, client may not even need to utilise that data.
+
+  The lazy processing is based on ‘process only on demand‘ strategy.
+
+  that is very great process only on demand !
+  process only on demand
+
+  Laziness and Java 8 Streams:
+
+  The current era is all about Big Data, Parallel Processing, and Being Real Time
+
+  Here there is a map operation called up on a stream then we are putting a delay of 5 seconds and then a collect operation (Terminal Operation) is called.
+  To demonstrate the laziness, we have put a delay of 5 seconds.
+  The output put clearly shows the map operation was called after calling the collect method only.
+  Think of the collection operations created at one place and probably never used in the entire program.
+  Java 8 Streams do not process the collection operations until user actually starts using it.

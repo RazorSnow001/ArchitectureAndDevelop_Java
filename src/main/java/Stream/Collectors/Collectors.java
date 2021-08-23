@@ -1,7 +1,6 @@
 package Stream.Collectors;
 
-import Stream.Dish;
-import org.w3c.dom.ls.LSOutput;
+import Stream.Examples.Dish;
 
 import java.util.Arrays;
 import java.util.List;

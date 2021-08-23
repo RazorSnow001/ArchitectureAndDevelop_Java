@@ -1,4 +1,4 @@
-package Stream;
+package Stream.Examples;
 
 public class Dish {
     public String dishName;

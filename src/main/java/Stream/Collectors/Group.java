@@ -1,11 +1,10 @@
 package Stream.Collectors;
 
-import Stream.Dish;
+import Stream.Examples.Dish;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 import static java.util.stream.Collectors.*;
 

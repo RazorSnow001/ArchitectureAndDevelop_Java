@@ -1,9 +1,7 @@
-package Stream;
+package Stream.Examples;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static java.util.stream.Collectors.toList;
 
 public class UsingTakeWhile {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Stream;
+package Stream.Examples;
 
 import static java.util.stream.LongStream.iterate;
 
