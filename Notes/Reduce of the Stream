@@ -80,3 +80,8 @@ int count = menu.stream()
 
  so the stream reduce operation can cooperate with the parallelism !
  and that is really great !
+
+ We’ll investigate a
+ more complex form of reductions using the collect method in the next chapter. For
+ example, instead of reducing a stream into an Integer, you can also reduce it into a
+ Map if you want to group dishes by types.
