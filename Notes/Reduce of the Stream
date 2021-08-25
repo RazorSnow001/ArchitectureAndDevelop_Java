@@ -1,0 +1,82 @@
+Quiz 5.3: Reducing
+How would you count the number of dishes in a stream using the map and reduce
+methods?
+
+that is that
+
+if we use the map we need to let the stream to map into the object to the number which is 1
+and second we get the sum of the 1s . which means we can ?
+use the reduce to get the sum and get the result of that !
+
+int count = menu.stream()
+ .map(d -> 1)
+ .reduce(0, (a, b) -> a + b);
+
+ that is very great
+
+ but that is a little bit ...
+
+ long count = menu.stream().count();
+
+ A chain of map and reduce is commonly known as the map-reduce pattern,
+
+ made
+ famous by Google’s use of it for web searching because it can be easily parallelized.
+
+ what the fuck it can be parallelized !
+
+ Benefit of the reduce method and parallelism
+
+ The benefit of using reduce compared to the step-by-step iteration summation that
+ you wrote earlier is that the iteration is abstracted using internal iteration, which
+ enables the internal implementation to choose to perform the reduce operation in
+ parallel. The iterative summation example involves shared updates to a sum variable,
+ which doesn’t parallelize gracefully. If you add in the needed synchronization, you’ll
+ likely discover that thread contention robs you of all the performance that parallelism
+ was supposed to give you!
+
+ which means the internal iteration will perform the reduce operation will operate in parallel
+
+ compare to the iterative summation example
+ involves shared updates to the sum variable
+ which naturally don't support the parallelism gracefully
+ we have to add the needed synchronization
+ the thread contention robs the performance of the parallelism
+ partition the input
+ sum the partitions
+ and
+ eventually combine the sums
+ that is easy to think
+ that is just divide and conquer
+ so
+ a1+a2+a3+a4+a5+a6 and so on
+ but
+ we divide it and use the divide and conquer algorithm
+ which is naturally a recursion algorithm but
+ recursion fits the parallelism will
+ which means for one
+ entrance of the method
+ we use one thread to execute that
+ and we will find that the
+ you know
+ that is actually the fork join pool
+ so the stream --- actually the parallelism  stream execution
+ depends on the fork join pool !
+
+ int sum = numbers.parallelStream().reduce(0, Integer::sum);
+
+
+ But there’s a price to pay to execute this code in parallel, as we’ll explain later: the
+ lambda passed to reduce can’t change state (for example, instance variables), and the
+ operation needs to be associative and commutative so it can be executed in any order.
+
+ that is something like the math
+ associative and commutative
+ so that is ok for any order
+ and that is ok for the parallelism
+ !
+ note that !
+ we shouldn't use the lambda to change the state !
+
+ so the stream reduce operation can cooperate with the parallelism !
+ and that is really great !

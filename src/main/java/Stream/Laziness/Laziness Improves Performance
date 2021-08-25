@@ -44,3 +44,38 @@
   stream method will be executed
   which follows the rule of the laziness operation !
 
+Performance Optimisation
+
+As discussed above, the internal processing model of streams is designed in order to optimise the processing flow.
+
+In the processing flow we usually create a pipe of various intermediate operations and a terminal operation in the end.
+
+List<String> ids = students.stream()
+    .filter(s - > {
+        System.out.println("filter - " + s);
+        return s.getAge() > 20;
+    })
+    .map(s - > {
+        System.out.println("map - " + s);
+        return s.getName();
+    })
+    .limit(3)
+    .collect(Collectors.toList());
+
+
+Output:
+
+filter - 8
+map - 8
+filter - 9
+map - 9
+filter - 10
+filter - 11
+map - 11
+
+so like  the name suggests the
+operation is in the stream
+which means either operation for example map and filter executed independently over the entire size of the available stream
+
+Short Circuit Methods
+

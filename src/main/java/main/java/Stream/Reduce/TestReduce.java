@@ -22,7 +22,12 @@ is reduced to a value)   */
     public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList(1, 5, 3, 6, 7, 2, 7, 3);
         int sum = numbers.stream().reduce(0, Integer::sum);
+        int sum2 = numbers.stream().reduce(0,(a,b)->a+b);
+        /* why we need this to do the reduce operation --- because that the reduce() method
+        consume BinaryOperator and the T identity, BinaryOperator<T> accumulator  '
+         which extends the BiFunction that is an @FunctionalInterface with apply method  R apply(T t, U u);   */
 
+        /*so with the stream and the reduce method we can easily get the sum or the min or max of some number attribute of the object in the stream */
         Optional<Integer> max = numbers.stream().reduce(Integer::max);
         System.out.println(max.get());
 
