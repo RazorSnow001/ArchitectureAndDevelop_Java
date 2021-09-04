@@ -1,0 +1,89 @@
+<dependency>
+    <groupId>io.reactivex</groupId>
+    <artifactId>rxjava</artifactId>
+    <version>${rx.java.version}</version>
+</dependency>
+
+
+functional programming is the process of building software by composing pure functions, avoiding shared state, mutable data, and side-effects.
+
+On the other side, reactive programming is an asynchronous programming paradigm concerned with data streams and the propagation of change.
+
+data driven and propagation of change !
+
+Together, functional reactive programming forms a combination of functional and reactive techniques
+
+elegant approach to event-driven programming – with values that change over time and where the consumer reacts to the data as it comes in.
+
+This technology brings together different implementations of its core principles
+
+Responsive – systems should respond in a timely manner
+
+Message Driven – systems should use async message-passing between components to ensure loose coupling
+
+Elastic – systems should stay responsive under high load
+
+Resilient – systems should stay responsive when some components fail
+
+1 the asyn can improve the responsive !
+2 use the asyn and the message  passing between the components to ensure loose
+  coupling !
+3 the system should stay responsive under high load !
+  high load !
+4 resilient . if some of the components fail . the system should stay responsive !
+
+
+There are two key types to understand when working with Rx:
+
+Observable represents any object that can get data from a data source
+and whose state may be of interest in a way that other objects may register an interest
+
+An observer is any object that wishes to be notified when the state of another object changes
+
+An observer subscribes to an Observable sequence
+
+so the observer in the list of the Observable sequence .
+and if the data changes . the observer will be notified !
+
+The observer handles each one before processing the next one. If many events come in asynchronously, they must be stored in a queue or dropped.
+
+events is in the queue
+
+In Rx, an observer will never be called with an item out of order or called before the callback has returned for the previous item.
+
+out of the order the queue the observer will nerver be called .
+if the previous item have no return -- call back . it will never be called !
+
+Types of Observable
+
+Non-Blocking – asynchronous execution is supported and is allowed to unsubscribe at any point in the event stream.
+On this article, we'll focus mostly on this kind of type
+
+to unsubscribe at any point in the event stream
+
+Blocking – all onNext observer calls will be synchronous
+and it is not possible to unsubscribe in the middle of an event stream.
+We can always convert an Observable into a Blocking Observable, using the method toBlocking:
+
+BlockingObservable<String> blockingObservable = observable.toBlocking();
+
+Operators
+
+what is the operator ?
+
+An operator is a function that takes one Observable (the source) as its first argument and returns another Observable (the destination)
+
+Then for every item that the source observable emits, it will apply a function to that item, and then emit the result on the destination Observable.
+
+Observable - operator - Observable -item - function - observable
+
+Operators can be chained together to create complex data flows that filter event based on certain criteria.
+Multiple operators can be applied to the same observable.
+
+It is not difficult to get into a situation in which an Observable is emitting items faster than an operator or observer can consume them.
+ You can read more about back-pressure here.
+
+ Observable<String> observable = Observable.just("Hello");
+ observable.subscribe(s -> result = s);
+
+ assertTrue(result.equals("Hello"));

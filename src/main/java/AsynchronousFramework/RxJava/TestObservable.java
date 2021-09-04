@@ -13,6 +13,12 @@ public class TestObservable {
             emitter.onComplete();
         });
         source.subscribe(s -> System.out.println("RECEIVED: " + s));
+
+        String[] letters = {"a", "b", "c", "d", "e", "f", "g"};
+        Observable<String> observable = Observable.fromArray(letters);
+
+
+
 /* ? Note that the Observable contract dictates that
  !  emissions must be passed sequentially and one at a time. Emissions cannot be passed by
  !  an Observable concurrently or in parallel. This may seem like a limitation, but it does in
