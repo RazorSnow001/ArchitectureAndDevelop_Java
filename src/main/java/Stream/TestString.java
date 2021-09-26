@@ -9,5 +9,8 @@ public class TestString {
            sb.append(str).append("\n");
         }
         System.out.println(sb);
+
+        String b = "abc" + "\n" + "swd";
+        System.out.println(b);
     }
 }
