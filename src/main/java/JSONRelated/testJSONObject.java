@@ -12,7 +12,7 @@ public class testJSONObject {
         person.putOpt("name", "John Brown");
         person.putOpt("age", 35);
         person.putOpt("pets", pets);
-        System.out.println(person.toString());
+        System.out.println(person);
 
 
 
