@@ -7,15 +7,15 @@ import java.util.Date;
 
 public class DateTest {
     public static void main(String[] args) {
-        Date now = new Date();
-        System.out.println(now);
-        Date previousDate = add(now, Calendar.MONTH, -6);
-        System.out.println(previousDate);
-        Long nowTime = now.getTime();
-        Long previousTime = previousDate.getTime();
+        Date end = new Date();
+        System.out.println(end);
+        Date start = add(end, Calendar.MINUTE, -30);
+        System.out.println(start);
+        Long endTime = end.getTime() / 1000;
+        Long startTime = start.getTime() / 1000;
 
-        System.out.println(nowTime);
-        System.out.println(previousTime);
+        System.out.println("startTime :" + startTime);
+        System.out.println("endTime :" + endTime);
      /*   Date beginOfToday = DateUtil.beginOfDay(now);
         System.out.println(beginOfToday);*/
         /**
@@ -25,7 +25,7 @@ public class DateTest {
         System.out.println(beginOfTodayTime);*/
     }
 
-    private static  Date add(Date date, int field, int diff) {
+    private static Date add(Date date, int field, int diff) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         calendar.set(field, calendar.get(field) + diff);
