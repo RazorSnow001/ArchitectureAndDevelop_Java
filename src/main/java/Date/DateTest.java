@@ -9,7 +9,7 @@ public class DateTest {
     public static void main(String[] args) {
         Date end = new Date();
         System.out.println(end);
-        Date start = add(end, Calendar.HOUR, -24);
+        Date start = add(end, Calendar.MINUTE, -25);
         System.out.println(start);
         Long endTime = end.getTime() / 1000;
         Long startTime = start.getTime() / 1000;

@@ -14,11 +14,6 @@ public class testJSONObject {
         person.putOpt("pets", pets);
         System.out.println(person);
 
-
-
-
-
-
     }
 
 
